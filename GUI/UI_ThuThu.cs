@@ -45,6 +45,7 @@ namespace GUI
             public static Color color9 = Color.FromArgb(153, 51, 255);
             public static Color color10 = Color.FromArgb(255, 51, 51);
             public static Color color11 = Color.FromArgb(0, 255, 255);
+            public static Color color12 = Color.FromArgb(153, 204, 255);
         }
 
         private void OpenFormChild(Form childForm)
@@ -265,6 +266,13 @@ namespace GUI
         private void lblTime_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNCC_Click(object sender, EventArgs e)
+        {
+            lbIconChild.Text = "Nhà Cung Cấp";
+            ActivateButton(sender, RGBColors.color12);
+            OpenFormChild(new GUI_NCC());
         }
     }
 }

@@ -71,6 +71,12 @@
     <Compile Include="GUI_MuonSach.Designer.cs">
       <DependentUpon>GUI_MuonSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_NCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_NCC.Designer.cs">
+      <DependentUpon>GUI_NCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_MuonSach.resx">
       <DependentUpon>GUI_MuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_NCC.resx">
+      <DependentUpon>GUI_NCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_NhanVien.resx">
       <DependentUpon>GUI_NhanVien.cs</DependentUpon>
