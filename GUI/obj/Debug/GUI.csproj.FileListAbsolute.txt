@@ -27,6 +27,7 @@ C:\Users\letan\source\repos\QuanLyThuVien\QuanLyThuVien\GUI\obj\Debug\GUI.GUI_Ta
 C:\Users\letan\source\repos\QuanLyThuVien\QuanLyThuVien\GUI\obj\Debug\GUI.GUI_TaiKhoan.resources
 C:\Users\letan\source\repos\QuanLyThuVien\QuanLyThuVien\GUI\obj\Debug\GUI.GUI_TheLoai.resources
 C:\Users\letan\source\repos\QuanLyThuVien\QuanLyThuVien\GUI\obj\Debug\GUI.GUI_TraSach.resources
+<<<<<<< HEAD
 C:\Users\Admin\source\repos\C-QLTV\GUI\bin\Debug\GUI.exe.config
 C:\Users\Admin\source\repos\C-QLTV\GUI\bin\Debug\GUI.exe
 C:\Users\Admin\source\repos\C-QLTV\GUI\bin\Debug\GUI.pdb
@@ -56,3 +57,6 @@ C:\Users\Admin\source\repos\C-QLTV\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.ca
 C:\Users\Admin\source\repos\C-QLTV\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\Admin\source\repos\C-QLTV\GUI\obj\Debug\GUI.exe
 C:\Users\Admin\source\repos\C-QLTV\GUI\obj\Debug\GUI.pdb
+=======
+C:\Users\letan\source\repos\QuanLyThuVien\QuanLyThuVien\GUI\obj\Debug\GUI.GUI_NCC.resources
+>>>>>>> 429fc884979d707faa678ed9fb630c094c4def43
