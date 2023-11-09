@@ -34,6 +34,12 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UI_ThuThu));
             this.panelControl = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNhapHang = new FontAwesome.Sharp.IconButton();
+            this.btnPhanQuyen = new FontAwesome.Sharp.IconButton();
+            this.btnTaiKhoan = new FontAwesome.Sharp.IconButton();
+            this.btnNhanVien = new FontAwesome.Sharp.IconButton();
+            this.btnDocGia = new FontAwesome.Sharp.IconButton();
+            this.btnNCC = new FontAwesome.Sharp.IconButton();
             this.btnNhaXuatBan = new FontAwesome.Sharp.IconButton();
             this.btnTacGia = new FontAwesome.Sharp.IconButton();
             this.btnTheLoai = new FontAwesome.Sharp.IconButton();
@@ -56,12 +62,7 @@ namespace GUI
             this.lblTime = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnNCC = new FontAwesome.Sharp.IconButton();
-            this.btnNhapHang = new FontAwesome.Sharp.IconButton();
-            this.btnPhanQuyen = new FontAwesome.Sharp.IconButton();
-            this.btnTaiKhoan = new FontAwesome.Sharp.IconButton();
-            this.btnNhanVien = new FontAwesome.Sharp.IconButton();
-            this.btnDocGia = new FontAwesome.Sharp.IconButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelControl.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -106,6 +107,138 @@ namespace GUI
             this.panel2.Size = new System.Drawing.Size(285, 634);
             this.panel2.TabIndex = 1;
             // 
+            // btnNhapHang
+            // 
+            this.btnNhapHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNhapHang.FlatAppearance.BorderSize = 0;
+            this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhapHang.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNhapHang.ForeColor = System.Drawing.Color.White;
+            this.btnNhapHang.IconChar = FontAwesome.Sharp.IconChar.TruckMoving;
+            this.btnNhapHang.IconColor = System.Drawing.Color.White;
+            this.btnNhapHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNhapHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhapHang.Location = new System.Drawing.Point(0, 770);
+            this.btnNhapHang.Name = "btnNhapHang";
+            this.btnNhapHang.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnNhapHang.Size = new System.Drawing.Size(268, 70);
+            this.btnNhapHang.TabIndex = 34;
+            this.btnNhapHang.Text = "Nhập Hàng";
+            this.btnNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhapHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhapHang.UseVisualStyleBackColor = true;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
+            // 
+            // btnPhanQuyen
+            // 
+            this.btnPhanQuyen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPhanQuyen.FlatAppearance.BorderSize = 0;
+            this.btnPhanQuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhanQuyen.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPhanQuyen.ForeColor = System.Drawing.Color.White;
+            this.btnPhanQuyen.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
+            this.btnPhanQuyen.IconColor = System.Drawing.Color.White;
+            this.btnPhanQuyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPhanQuyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhanQuyen.Location = new System.Drawing.Point(0, 700);
+            this.btnPhanQuyen.Name = "btnPhanQuyen";
+            this.btnPhanQuyen.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnPhanQuyen.Size = new System.Drawing.Size(268, 70);
+            this.btnPhanQuyen.TabIndex = 33;
+            this.btnPhanQuyen.Text = "Phân Quyền";
+            this.btnPhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhanQuyen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPhanQuyen.UseVisualStyleBackColor = true;
+            this.btnPhanQuyen.Click += new System.EventHandler(this.btnPhanQuyen_Click);
+            // 
+            // btnTaiKhoan
+            // 
+            this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
+            this.btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnTaiKhoan.IconColor = System.Drawing.Color.White;
+            this.btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 630);
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnTaiKhoan.Size = new System.Drawing.Size(268, 70);
+            this.btnTaiKhoan.TabIndex = 32;
+            this.btnTaiKhoan.Text = "Tài Khoản";
+            this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            // 
+            // btnNhanVien
+            // 
+            this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhanVien.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            this.btnNhanVien.IconColor = System.Drawing.Color.White;
+            this.btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 560);
+            this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnNhanVien.Size = new System.Drawing.Size(268, 70);
+            this.btnNhanVien.TabIndex = 31;
+            this.btnNhanVien.Text = "Nhân Viên";
+            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhanVien.UseVisualStyleBackColor = true;
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
+            // 
+            // btnDocGia
+            // 
+            this.btnDocGia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDocGia.FlatAppearance.BorderSize = 0;
+            this.btnDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDocGia.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDocGia.ForeColor = System.Drawing.Color.White;
+            this.btnDocGia.IconChar = FontAwesome.Sharp.IconChar.BookOpenReader;
+            this.btnDocGia.IconColor = System.Drawing.Color.White;
+            this.btnDocGia.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDocGia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocGia.Location = new System.Drawing.Point(0, 490);
+            this.btnDocGia.Name = "btnDocGia";
+            this.btnDocGia.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnDocGia.Size = new System.Drawing.Size(268, 70);
+            this.btnDocGia.TabIndex = 30;
+            this.btnDocGia.Text = "Độc Giả";
+            this.btnDocGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocGia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDocGia.UseVisualStyleBackColor = true;
+            this.btnDocGia.Click += new System.EventHandler(this.btnDocGia_Click);
+            // 
+            // btnNCC
+            // 
+            this.btnNCC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNCC.FlatAppearance.BorderSize = 0;
+            this.btnNCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNCC.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNCC.ForeColor = System.Drawing.Color.White;
+            this.btnNCC.IconChar = FontAwesome.Sharp.IconChar.Warehouse;
+            this.btnNCC.IconColor = System.Drawing.Color.White;
+            this.btnNCC.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNCC.Location = new System.Drawing.Point(0, 420);
+            this.btnNCC.Name = "btnNCC";
+            this.btnNCC.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnNCC.Size = new System.Drawing.Size(268, 70);
+            this.btnNCC.TabIndex = 29;
+            this.btnNCC.Text = "Nhà Cung Cấp";
+            this.btnNCC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNCC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNCC.UseVisualStyleBackColor = true;
+            this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
+            // 
             // btnNhaXuatBan
             // 
             this.btnNhaXuatBan.Dock = System.Windows.Forms.DockStyle.Top;
@@ -120,7 +253,7 @@ namespace GUI
             this.btnNhaXuatBan.Location = new System.Drawing.Point(0, 350);
             this.btnNhaXuatBan.Name = "btnNhaXuatBan";
             this.btnNhaXuatBan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnNhaXuatBan.Size = new System.Drawing.Size(264, 70);
+            this.btnNhaXuatBan.Size = new System.Drawing.Size(268, 70);
             this.btnNhaXuatBan.TabIndex = 16;
             this.btnNhaXuatBan.Text = "Nhà Xuất Bản";
             this.btnNhaXuatBan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -142,7 +275,7 @@ namespace GUI
             this.btnTacGia.Location = new System.Drawing.Point(0, 280);
             this.btnTacGia.Name = "btnTacGia";
             this.btnTacGia.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnTacGia.Size = new System.Drawing.Size(264, 70);
+            this.btnTacGia.Size = new System.Drawing.Size(268, 70);
             this.btnTacGia.TabIndex = 15;
             this.btnTacGia.Text = "Tác Giả";
             this.btnTacGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,7 +297,7 @@ namespace GUI
             this.btnTheLoai.Location = new System.Drawing.Point(0, 210);
             this.btnTheLoai.Name = "btnTheLoai";
             this.btnTheLoai.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnTheLoai.Size = new System.Drawing.Size(264, 70);
+            this.btnTheLoai.Size = new System.Drawing.Size(268, 70);
             this.btnTheLoai.TabIndex = 14;
             this.btnTheLoai.Text = "Thể Loại";
             this.btnTheLoai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +319,7 @@ namespace GUI
             this.btnTrasach.Location = new System.Drawing.Point(0, 140);
             this.btnTrasach.Name = "btnTrasach";
             this.btnTrasach.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnTrasach.Size = new System.Drawing.Size(264, 70);
+            this.btnTrasach.Size = new System.Drawing.Size(268, 70);
             this.btnTrasach.TabIndex = 12;
             this.btnTrasach.Text = "Trả Sách";
             this.btnTrasach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,7 +341,7 @@ namespace GUI
             this.btnPhieumuon.Location = new System.Drawing.Point(0, 70);
             this.btnPhieumuon.Name = "btnPhieumuon";
             this.btnPhieumuon.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnPhieumuon.Size = new System.Drawing.Size(264, 70);
+            this.btnPhieumuon.Size = new System.Drawing.Size(268, 70);
             this.btnPhieumuon.TabIndex = 11;
             this.btnPhieumuon.Text = "Mượn Sách";
             this.btnPhieumuon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,7 +363,7 @@ namespace GUI
             this.btnSach.Location = new System.Drawing.Point(0, 0);
             this.btnSach.Name = "btnSach";
             this.btnSach.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnSach.Size = new System.Drawing.Size(264, 70);
+            this.btnSach.Size = new System.Drawing.Size(268, 70);
             this.btnSach.TabIndex = 10;
             this.btnSach.Text = "Sách";
             this.btnSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -360,7 +493,7 @@ namespace GUI
             this.lbIconChild.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbIconChild.Location = new System.Drawing.Point(126, 28);
             this.lbIconChild.Name = "lbIconChild";
-            this.lbIconChild.Size = new System.Drawing.Size(54, 23);
+            this.lbIconChild.Size = new System.Drawing.Size(45, 19);
             this.lbIconChild.TabIndex = 2;
             this.lbIconChild.Text = "Home";
             // 
@@ -443,138 +576,6 @@ namespace GUI
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnNCC
-            // 
-            this.btnNCC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNCC.FlatAppearance.BorderSize = 0;
-            this.btnNCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNCC.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.btnNCC.ForeColor = System.Drawing.Color.White;
-            this.btnNCC.IconChar = FontAwesome.Sharp.IconChar.Warehouse;
-            this.btnNCC.IconColor = System.Drawing.Color.White;
-            this.btnNCC.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNCC.Location = new System.Drawing.Point(0, 420);
-            this.btnNCC.Name = "btnNCC";
-            this.btnNCC.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnNCC.Size = new System.Drawing.Size(264, 70);
-            this.btnNCC.TabIndex = 29;
-            this.btnNCC.Text = "Nhà Cung Cấp";
-            this.btnNCC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNCC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNCC.UseVisualStyleBackColor = true;
-            this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
-            // 
-            // btnNhapHang
-            // 
-            this.btnNhapHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNhapHang.FlatAppearance.BorderSize = 0;
-            this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhapHang.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.btnNhapHang.ForeColor = System.Drawing.Color.White;
-            this.btnNhapHang.IconChar = FontAwesome.Sharp.IconChar.TruckMoving;
-            this.btnNhapHang.IconColor = System.Drawing.Color.White;
-            this.btnNhapHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNhapHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapHang.Location = new System.Drawing.Point(0, 770);
-            this.btnNhapHang.Name = "btnNhapHang";
-            this.btnNhapHang.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnNhapHang.Size = new System.Drawing.Size(264, 70);
-            this.btnNhapHang.TabIndex = 34;
-            this.btnNhapHang.Text = "Nhập Hàng";
-            this.btnNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhapHang.UseVisualStyleBackColor = true;
-            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
-            // 
-            // btnPhanQuyen
-            // 
-            this.btnPhanQuyen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPhanQuyen.FlatAppearance.BorderSize = 0;
-            this.btnPhanQuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhanQuyen.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.btnPhanQuyen.ForeColor = System.Drawing.Color.White;
-            this.btnPhanQuyen.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
-            this.btnPhanQuyen.IconColor = System.Drawing.Color.White;
-            this.btnPhanQuyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPhanQuyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhanQuyen.Location = new System.Drawing.Point(0, 700);
-            this.btnPhanQuyen.Name = "btnPhanQuyen";
-            this.btnPhanQuyen.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnPhanQuyen.Size = new System.Drawing.Size(264, 70);
-            this.btnPhanQuyen.TabIndex = 33;
-            this.btnPhanQuyen.Text = "Phân Quyền";
-            this.btnPhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhanQuyen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPhanQuyen.UseVisualStyleBackColor = true;
-            this.btnPhanQuyen.Click += new System.EventHandler(this.btnPhanQuyen_Click);
-            // 
-            // btnTaiKhoan
-            // 
-            this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaiKhoan.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.btnTaiKhoan.IconColor = System.Drawing.Color.White;
-            this.btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 630);
-            this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnTaiKhoan.Size = new System.Drawing.Size(264, 70);
-            this.btnTaiKhoan.TabIndex = 32;
-            this.btnTaiKhoan.Text = "Tài Khoản";
-            this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTaiKhoan.UseVisualStyleBackColor = true;
-            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
-            // 
-            // btnNhanVien
-            // 
-            this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhanVien.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.btnNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            this.btnNhanVien.IconColor = System.Drawing.Color.White;
-            this.btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 560);
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnNhanVien.Size = new System.Drawing.Size(264, 70);
-            this.btnNhanVien.TabIndex = 31;
-            this.btnNhanVien.Text = "Nhân Viên";
-            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhanVien.UseVisualStyleBackColor = true;
-            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
-            // 
-            // btnDocGia
-            // 
-            this.btnDocGia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDocGia.FlatAppearance.BorderSize = 0;
-            this.btnDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocGia.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
-            this.btnDocGia.ForeColor = System.Drawing.Color.White;
-            this.btnDocGia.IconChar = FontAwesome.Sharp.IconChar.BookOpenReader;
-            this.btnDocGia.IconColor = System.Drawing.Color.White;
-            this.btnDocGia.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDocGia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocGia.Location = new System.Drawing.Point(0, 490);
-            this.btnDocGia.Name = "btnDocGia";
-            this.btnDocGia.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnDocGia.Size = new System.Drawing.Size(264, 70);
-            this.btnDocGia.TabIndex = 30;
-            this.btnDocGia.Text = "Độc Giả";
-            this.btnDocGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocGia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDocGia.UseVisualStyleBackColor = true;
-            this.btnDocGia.Click += new System.EventHandler(this.btnDocGia_Click);
-            // 
             // UI_ThuThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -635,5 +636,6 @@ namespace GUI
         private FontAwesome.Sharp.IconButton btnNhanVien;
         private FontAwesome.Sharp.IconButton btnDocGia;
         private FontAwesome.Sharp.IconButton btnNCC;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -60,3 +60,4 @@ C:\Users\Admin\source\repos\C-QLTV\GUI\obj\Debug\GUI.pdb
 =======
 C:\Users\letan\source\repos\QuanLyThuVien\QuanLyThuVien\GUI\obj\Debug\GUI.GUI_NCC.resources
 >>>>>>> 429fc884979d707faa678ed9fb630c094c4def43
+C:\Users\Admin\source\repos\C-QLTV\GUI\obj\Debug\GUI.GUI_NCC.resources
